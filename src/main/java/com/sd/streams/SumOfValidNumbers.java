@@ -23,6 +23,8 @@ public class SumOfValidNumbers {
 			
 		}
 	  
+	  
+	  //another way of implementation using predicate
 	  public static int sumOfValidNumbersUsingPredicate(List<String> strings) {
 	       
 	      return strings.stream()
