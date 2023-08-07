@@ -34,6 +34,19 @@ Write a Java method that takes the list of integers as input and returns the sum
 		
 		
 	}
+	
+	public static int sumOfSquarsOfEvenNumbersUsingReduce(List<Integer> numbers) {
+		if(numbers==null || numbers.size()==0) {
+			return -1;
+		}
+		
+
+		return numbers.stream()
+				.filter(x -> x%2==0)
+				.map(x -> x*x)
+				.reduce(0, (a,b)->a+b);
+		
+	}
 
 
 }
