@@ -8,7 +8,7 @@ public class SumOfValidNumbers {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		List<String> list = Arrays.asList(new String[] {"apple", "15", "banana", "30", "5", "grape"});
-		System.out.println("response "+sumOfValidNumbers(list));
+		System.out.println("response "+sumOfValidNumbersUsingPredicate(list));
 	}
 	
 	  public static int sumOfValidNumbers(List<String> strings) {
@@ -22,6 +22,27 @@ public class SumOfValidNumbers {
 		
 			
 		}
+	  
+	  public static int sumOfValidNumbersUsingPredicate(List<String> strings) {
+	       
+	      return strings.stream()
+	       .filter(x -> checkNumber(x))
+	       .mapToInt(Integer::parseInt)
+	       .sum();
+			  
+		  }
+		  
+		  public static boolean checkNumber(String s){
+		      
+		      try{
+		        Integer.parseInt(s);
+		        return true;
+		      } catch(Exception e){
+		          return false;
+		      }
+		      
+		  }
+
 
 
 
