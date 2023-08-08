@@ -31,7 +31,7 @@ public class FindTopScorer {
 	public static void main(String[] args) {
 		List<String> words= List.of("Alice:85", "Bob:92", "Carol:78", "David:92");
 	     
-	     String response = findTopScorer(words);
+	     String response = findTopScorerUsingReduce(words);
 	     System.out.println("response "+response);
 
 	}
@@ -42,5 +42,13 @@ public class FindTopScorer {
            .map(s -> s.split(":")[0])
            .orElse("No data found");
    }
+	 
+	public static String findTopScorerUsingReduce(List<String> scores) {
+		return scores.stream().reduce((s1, s2) -> {
+			int score1 = Integer.parseInt(s1.split(":")[1]);
+			int score2 = Integer.parseInt(s2.split(":")[1]);
+			return score1 > score2 ? s1 : s2;
+		}).map(s -> s.split(":")[0]).orElse("No data found");
+	}
 
 }
