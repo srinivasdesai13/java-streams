@@ -13,14 +13,20 @@ public class LongestString {
 	 */
 
 	public static void main(String args[]) {
-		List<String> words = List.of("apple", "banana", "grape", "kiwi", "orange");
-		String response = findLongestWord(words);
+		List<String> words = List.of("java", "programming", "language");
+		String response = findLongestWordUsingReduce(words);
 		System.out.println("response " + response);
 	}
 
 	public static String findLongestWord(List<String> words) {
 		return words.stream()
 				.max(Comparator.comparingInt(String::length))
+				.orElse("No Data Found");
+	}
+	
+	public static String findLongestWordUsingReduce(List<String> words) {
+		return words.stream()
+				.reduce((s1,s2)->s1.length()>=s2.length()?s1:s2)
 				.orElse("No Data Found");
 	}
 }
