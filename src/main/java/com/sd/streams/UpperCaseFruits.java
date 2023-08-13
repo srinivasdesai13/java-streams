@@ -26,35 +26,6 @@ public class UpperCaseFruits {
 	        .reduce((a,b)->a+","+b)
 	        .get();
 	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        
 	    }
 	   
 	   public static String uppercaseFruitsUsingCollectors(List<String> fruits) {

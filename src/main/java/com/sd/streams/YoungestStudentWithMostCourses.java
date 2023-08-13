@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class YoungestStudentWithMostCourses {
-	
+
 	/*
 	 * You are given a list of Student objects, each representing a student with a
 	 * name, age, and a list of Course objects they are enrolled in. Your task is to
@@ -34,10 +34,12 @@ public class YoungestStudentWithMostCourses {
 			return b1.getCourses().size() - b2.getCourses().size();
 		}).get().getName();
 	}
+
 	public static String findYoungestStudentWithMostCourses2(List<Student> students) {
-		return students.stream()
-				.max(Comparator.comparingInt(s -> s.getCourses().size()))
-				.get().getName();
+		return students.stream() //
+				.max(Comparator.comparingInt(s -> s.getCourses().size())) //
+				.get() //
+				.getName(); //
 	}
 }
 
